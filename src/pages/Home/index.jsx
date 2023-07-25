@@ -1,13 +1,13 @@
-import { useCountries } from "../../hooks/useCountries";
+import Header from "../../components/Header";
+import SearchBar from "../../components/SearchBar";
 
 
 const Home = () => {
 
-    const { countries } = useCountries()
-
     return (
         <div>
-            
+            <Header/>
+            <SearchBar/>
         </div>
     );
 }

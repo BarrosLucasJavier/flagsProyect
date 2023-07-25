@@ -1,0 +1,23 @@
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: var(--background);
+    color: var(--textColor);
+}
+.headerContainer h1{
+    font-size: 0.9rem;
+}
+.headerContainer button{
+    border: none;
+    padding: 0.7rem;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 700;
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+    color: var(--textColor);
+}

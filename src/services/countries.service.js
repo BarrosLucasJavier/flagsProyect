@@ -12,3 +12,14 @@ export const getAllCountries = async () => {
         throw new Error("Hubo un error al obtener paises")
     }
 }
+
+export const getRegionCountries = async (region) =>{
+    try {
+        const url = `${apiUrl}region/${region}`
+        const { data } = await axios.get(url)
+        return data;
+    } catch (error) {
+        console.error(error)
+        throw new Error ("Hubo un error al obtener los paises")
+    }
+}

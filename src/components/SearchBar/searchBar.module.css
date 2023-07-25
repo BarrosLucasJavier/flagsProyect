@@ -1,0 +1,11 @@
+.searchInput{
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0.7rem;
+    max-width: 350px;
+}
+.searchInput input{
+    border: none;
+}
+.searchIcon{}

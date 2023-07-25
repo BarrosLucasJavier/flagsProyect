@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { getAllCountries } from "../services/countries.service";
+import { getAllCountries, getRegionCountries } from "../services/countries.service";
 import PropTypes from 'prop-types'
 
 
@@ -17,13 +17,26 @@ export const CountriesProvider = ({children}) => {
             console.log(error);
         }
     }
+    const getContriesByRegion = async (region) => {
+        try {
+            const countriesRegion = await getRegionCountries(region);
+            return countriesRegion;
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     useEffect(() => {
         getCountries();
     }, []);
 
+    const countriesValues = {
+        countries,
+        getContriesByRegion
+    }
+
     return (
-        <CountriesContext.Provider value={{countries}}>
+        <CountriesContext.Provider value={countriesValues}>
             {children}
         </CountriesContext.Provider>
     )
