@@ -4,7 +4,7 @@ export const setMode = (darkMode) =>{
         document.documentElement.style.setProperty("--mainColor", "hsl(209, 23%, 22%)")
         document.documentElement.style.setProperty("--background", "hsl(207, 26%, 17%)" )
         document.documentElement.style.setProperty("--textColor", "hsl(0, 0%, 100%)" )
-        document.documentElement.style.setProperty("--inputColor", "hsl(209, 23%, 22%)")
+        document.documentElement.style.setProperty("--inputColor", "white")
     }else{
         document.documentElement.style.setProperty("--mainColor", "hsl(0, 0%, 100%)")
         document.documentElement.style.setProperty("--background", "hsl(0, 0%, 98%)")

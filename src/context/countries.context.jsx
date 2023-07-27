@@ -20,7 +20,7 @@ export const CountriesProvider = ({children}) => {
     const getContriesByRegion = async (region) => {
         try {
             const countriesRegion = await getRegionCountries(region);
-            return countriesRegion;
+            setCountries(countriesRegion);
         } catch (error) {
             console.log(error)
         }
@@ -31,8 +31,10 @@ export const CountriesProvider = ({children}) => {
     }, []);
 
     const countriesValues = {
+        setCountries,
         countries,
-        getContriesByRegion
+        getContriesByRegion,
+        getCountries
     }
 
     return (
