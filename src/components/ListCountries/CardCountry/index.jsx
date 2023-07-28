@@ -1,9 +1,18 @@
 import PropTypes from 'prop-types'
 import styles from './cardCountry.module.css'
+import { useNavigate } from 'react-router-dom';
 
 const CardCountry = ({ country }) => {
+
+    const navigate = useNavigate()
+
+    const handleDetails = () =>{
+        console.log(country.name.common);
+        navigate(`/details/${country.name.common}`)
+    }
+
     return (
-        <div className={styles.cardContainer}>
+        <div className={styles.cardContainer} onClick={() => handleDetails()}>
             <div>
                 <img src={country.flags.png}/>
             </div>
