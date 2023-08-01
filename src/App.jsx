@@ -5,13 +5,13 @@ import './index.css'
 
 
 function App() {
-  
+
   return (
-    <Router>
-      <CountriesProvider>
-        <AppRoutes/>
-      </CountriesProvider>
-    </Router>
+    <CountriesProvider>
+      <Router>
+        <AppRoutes />
+      </Router>
+    </CountriesProvider>
   )
 }
 

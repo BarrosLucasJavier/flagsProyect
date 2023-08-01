@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types'
 import styles from './cardCountry.module.css'
 import { useNavigate } from 'react-router-dom';
+import { useCountries } from '../../../hooks/useCountries';
 
 const CardCountry = ({ country }) => {
 
     const navigate = useNavigate()
+    const {getCountry} = useCountries()
+
 
     const handleDetails = () =>{
-        console.log(country.name.common);
+        getCountry(country.name.common);
         navigate(`/details/${country.name.common}`)
     }
 
