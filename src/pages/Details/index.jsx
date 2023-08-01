@@ -33,26 +33,28 @@ const Details = () => {
         <>
             <Header />
             <main className={styles.detailsContainer}>
-                <button className={styles.btnBack} onClick={() => navigate(-1)}><FontAwesomeIcon icon={faArrowLeft} />Back</button>
-                <section>
+                <button className={styles.btnBack} onClick={() => navigate("/")}><FontAwesomeIcon icon={faArrowLeft} />Back</button>
+                <section className={styles.flexContainer}>
                     <div>
                         <img className={styles.detailsImg} src={countryDetails.flags} />
                     </div>
                     <div className={styles.detailsInfo}>
-                        <div>
-                            <h2>{countryDetails.name}</h2>
-                            <div className={styles.infoBlock}>
-                                <p><span>Native Name: </span>{countryDetails.native}</p>
-                                <p><span>Population: </span>{countryDetails.population}</p>
-                                <p><span>Region: </span>{countryDetails.region}</p>
-                                <p><span>Sub Region: </span>{countryDetails.subregion}</p>
-                                <p><span>Capital: </span>{countryDetails.capital}</p>
+                        <h2>{countryDetails.name}</h2>
+                        <div className={styles.infoSection}>
+                            <div className={styles.detailsRegion}>
+                                <div className={styles.infoBlock}>
+                                    <p><span>Native Name: </span>{countryDetails.native}</p>
+                                    <p><span>Population: </span>{countryDetails.population}</p>
+                                    <p><span>Region: </span>{countryDetails.region}</p>
+                                    <p><span>Sub Region: </span>{countryDetails.subregion}</p>
+                                    <p><span>Capital: </span>{countryDetails.capital}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className={styles.infoBlock}>
-                            <p><span>Top Level Domain: </span>{countryDetails.tld}</p>
-                            <p><span>Currencies: </span>{countryDetails.currencies}</p>
-                            <p><span>Lenguages: </span>{countryDetails.language}</p>
+                            <div className={styles.infoBlock}>
+                                <p><span>Top Level Domain: </span>{countryDetails.tld}</p>
+                                <p><span>Currencies: </span>{countryDetails.currencies}</p>
+                                <p><span>Lenguages: </span>{countryDetails.language}</p>
+                            </div>
                         </div>
                         <div className={styles.bordersContainer}>
                             <p>Border Countries:</p>

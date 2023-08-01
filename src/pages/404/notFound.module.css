@@ -1,0 +1,29 @@
+.notFoundContainer{
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+    color: var(--textColor);
+}
+.notFoundContainer h2{
+    font-size: 3rem;
+}
+.iconWarning{
+    color: orange;
+    font-size: 8rem;
+}
+.notFoundContainer button{
+        padding: 0.7rem;
+        width: 8rem;
+        background-color: var(--mainColor);
+        border: none;
+        color: var(--textColor);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 0.7rem;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}

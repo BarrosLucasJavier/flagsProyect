@@ -31,13 +31,15 @@ export const CountriesProvider = ({children}) => {
     const getCountry = async (name) => {
         try {
             const country = await getCountryDetails(name)
-
-            const bordersCountry = await Promise.all(
-                country.borders ? country.borders.map(async border =>{
-                    const temp  =  await getCountryByCode(border)
-                    return temp[0].name.common
-                }) : null
-            )
+            let bordersCountry=[];
+            if(country.borders){
+                    bordersCountry = await Promise.all(
+                        country.borders.map(async border =>{
+                        const temp  =  await getCountryByCode(border)
+                        return temp[0].name.common
+                    })
+                )
+            }
             return setCountryDetails({
                 name: country.name.common,
                 native: Object.values(country.name.nativeName)[0].official,

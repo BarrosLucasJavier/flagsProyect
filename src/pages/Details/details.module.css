@@ -2,6 +2,11 @@
     padding: 2rem;
     color: var(--textColor);
 }
+.flexContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 .btnBack{
     padding: 0.4rem;
     width: 7rem;
@@ -12,8 +17,9 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    gap: 0.7ren;
+    gap: 0.7rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 }
 
 .detailsImg{
@@ -46,4 +52,40 @@
 .bordersContainer p{
     font-size: 1.2rem;
     font-weight: 600;
+}
+@media (min-width:500px){
+    .detailsImg{
+        max-width: 700px;
+        min-width: 500px;
+        height: 350px;
+    }
+}
+@media (min-width:800px){
+    .flexContainer{
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 1rem;
+        margin: 5rem 0;
+    }
+    .infoSection{
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    .detailsInfo{
+        gap: 1rem;
+        max-width: 700px;
+    }
+    .detailsInfo h2{
+        margin: 0;
+    }
+    .bordersContainer{
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        flex-wrap: wrap;
+    }
+
 }

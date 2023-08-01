@@ -5,7 +5,7 @@ import { useCountries } from "../../hooks/useCountries";
 
 const SearchBar = () => {
 
-    const { getContriesByRegion, getCountries } = useCountries();
+    const { getContriesByRegion, getCountries, countries, setCountries } = useCountries();
 
     const handleSelect = (e) =>{
         const selectedValue = e.target.value;
@@ -17,11 +17,24 @@ const SearchBar = () => {
         }
     }
 
+    const handleSearch = (e) =>{
+        const search = e.target.value;
+    
+        if(search){
+            const countriesFiltered = countries.filter(country => {
+                return country.name.common.toLowerCase().indexOf(search) > -1   
+            } )
+            setCountries(countriesFiltered);
+        }else{
+            getCountries()
+        }
+    }
+
     return (
         <section className={styles.searchContainer}>
         <div className={styles.searchInput}>
             <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.searchIcon} />
-            <input type="text" placeholder="Search for a country..."/>
+            <input onChange={handleSearch} type="text" placeholder="Search for a country..."/>
         </div>
         <select className={styles.searchSelect} onChange={handleSelect}>
             <option defaultValue="all" value="all">Filter by Region</option>
